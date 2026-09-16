@@ -1,0 +1,1 @@
+set synctex-editor-command "nvim --remote-expr \"vimtex#window#sync_view(%line, '%file')\""

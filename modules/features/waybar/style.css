@@ -1,0 +1,74 @@
+@import "global-colors.css";
+
+* { 
+    font-family: "JetBrains Mono Nerd Font", sans-serif; 
+    font-size: 13px; 
+    border: none; 
+    border-radius: 0; 
+}
+
+window#waybar { 
+    background-color: rgba(21, 22, 30, 0.85); 
+    border-bottom: 0px solid @color4; 
+    color: @foreground; 
+    transition: background-color 0.5s ease; 
+    box-shadow: none; 
+    border: none; 
+    border-radius: 0; 
+}
+
+#clock,
+#battery,
+#cpu,
+#memory,
+#network,
+#pulseaudio,
+#tray { 
+    padding: 0 12px; 
+    color: @foreground; 
+}
+
+#clock { 
+    color: @foreground; 
+    font-weight: bold; 
+    font-size: 13px; 
+}
+
+#battery.charging { 
+    color: @foreground; 
+}
+
+#custom-gpu { 
+    padding: 0 12px; 
+    color: @foreground; 
+}
+
+#mpris { 
+    padding: 0 12px; 
+}
+
+#temperature { 
+    padding: 0 12px; 
+}
+
+#power-profiles-daemon { 
+    padding: 0 12px; 
+    color: @foreground; 
+}
+
+#temperature.critical { 
+    color: @color1;
+}
+
+#power-profiles-daemon.performance { 
+    color: @foreground; 
+}
+
+#power-profiles-daemon.power-saver { 
+    color: @foreground; 
+}
+
+#niri-workspaces { 
+    padding: 0 12px; 
+}
+

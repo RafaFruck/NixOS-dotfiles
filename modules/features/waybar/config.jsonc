@@ -1,0 +1,93 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 35,
+    "spacing": 0,
+    "modules-left": ["mpris", "niri/window"],
+    "modules-center": ["clock"],
+      "modules-right": ["pulseaudio", "network", "cpu", "temperature", "custom/gpu", "memory", "battery", "power-profiles-daemon", "tray"],
+    "margin-top": 0,
+    "margin-bottom": 0,
+    "margin-left": 0,
+    "margin-right": 0,
+
+    "niri/workspaces": {
+        "format": "{icon}",
+        "format-icons": {
+            "default": "○",
+            "active": "●"
+        }
+    },
+    "niri/window": {
+        "format": "    {title}",
+        "max-length": 50
+    },
+    "clock": {
+        "format": "{:%H:%M} 󰃭",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+    },
+    "cpu": {
+        "format": "{usage}% ",
+        "tooltip": false
+    },
+    "memory": {
+        "format": "{}% "
+    },
+    "battery": {
+        "states": {
+            "warning": 20,
+            "critical": 10
+        },
+        "format": "{capacity}% {icon}",
+        "format-charging": "{capacity}% 󱐋",
+        "format-icons": ["󰁺", "󰁼", "󰁾", "󰂀", "󰁹"]
+    },
+    "network": {
+        "format-wifi": "{essid} ",
+        "format-ethernet": "󰈀",
+        "format-disconnected": "󰤮"
+    },
+    "pulseaudio": {
+        "format": "{volume}% {icon}",
+        "format-muted": "󰝟",
+        "format-icons": ["󰕿", "󰖀", "󰕾"]
+    },
+    "custom/gpu" : {
+      "exec": "~/.config/waybar/scripts/gpu.sh",
+      "return-type": "json"
+    },
+    "mpris": {
+      "format": "{player_icon} {status_icon} <i>{artist} - {title}</i>",
+      "player": "playerctld",
+      "max-length": 50,
+      "on-click": "playerctl play-pause",
+      "format-paused": "{player_icon} {status_icon} {artist} - {title}    ",
+      "player-icons": {
+        "default": "",
+        "spotify": " ",
+        "mpv": " "
+      },
+      "status-icons": {
+        "paused": "▶",
+	"playing": "⏸"
+      }
+    },
+    "temperature": {
+      "hwmon-path": "/sys/class/hwmon/hwmon4/temp1_input",
+      "critical-threshold": 85,
+      "format": "{temperatureC}°C {icon}",
+      "format-icons": ["󰈸", "󱃂", "󱃃"],
+      "tooltip": true
+    },
+    "power-profiles-daemon": {
+      "format": "{icon}",
+      "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+      "tooltip": true,
+      "format-icons": {
+	  "default": "D",
+	  "performance": "󰓅",
+          "balanced": "󰾅",
+          "power-saver": "󰾆"
+      }
+    }
+}
