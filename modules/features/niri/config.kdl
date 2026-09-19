@@ -61,7 +61,8 @@ binds {
 
   Mod+O { spawn "sh" "-c" "echo 'overview { zoom 0.5; }' > ~/.cache/niri/overview-zoom.kdl && niri msg action toggle-overview"; }
   Mod+Shift+O { spawn "~/zsh-scripts/niri-eagle-eye.sh"; }
-  Mod+C { spawn "kitty" "--class" "calc-popup" "qalc"; }
+  Mod+C { spawn "kitty" "--class" "qalc-popup" "qalc"; }
+  Mod+E { spawn "kitty" "--class" "yazi-popup" "yazi"; }
   Mod+T { spawn "kitty"; }
   Mod+D { spawn "fuzzel"; }
 
@@ -112,6 +113,7 @@ binds {
   XF86AudioRaiseVolume { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "5%+" "-l" "1.5"; }
   XF86AudioLowerVolume { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "5%-"; }
   XF86AudioMute        { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SINK@" "toggle"; }
+  Shift+XF86AudioMute        { spawn "zsh" "-c" "source ~/.zshrc && silence"; }
   XF86AudioMicMute     { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SOURCE@" "toggle"; }
   XF86MonBrightnessUp   { spawn "brightnessctl" "set" "5%+"; }
   XF86MonBrightnessDown { spawn "brightnessctl" "set" "5%-"; }
@@ -133,7 +135,7 @@ window-rule {
   open-maximized true
 }
 window-rule {
-    match app-id="calc-popup"
+    match app-id="qalc-popup"
     open-floating true
     default-column-width { fixed 1280; }
     default-window-height { fixed 720; }
