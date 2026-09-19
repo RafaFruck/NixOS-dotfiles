@@ -45,29 +45,39 @@
         };
 
         initContent = ''
-                        export PATH="$HOME/.local/bin:$PATH"
+                               export PATH="$HOME/.local/bin:$PATH"
 
-                        _fzf_compgen_path() {
-                          fd --hidden --exclude .git . "$1"
+                               _fzf_compgen_path() {
+                                 fd --hidden --exclude .git . "$1"
+                               }
+                               _fzf_compgen_dir() {
+                                 fd --type=d --hidden --exclude .git . "$1"
                         }
-                        _fzf_compgen_dir() {
-                          fd --type=d --hidden --exclude .git . "$1"
+
+                               export UV_PYTHON_PREFERENCE=managed
+
+                               bindkey '^ ' forward-word
+                               bindkey '^[[27;5;9~' autosuggest-accept
+
+                 gcp() {
+            if [ -z "$1" ]; then
+              echo "❌ Write a message!"
+                     return 1
+            fi
+            git reset --soft origin/main && \
+            git commit -m "$1" && \
+            git push origin main
                  }
 
-                        export UV_PYTHON_PREFERENCE=managed
+          silence() {
+            local pid=$(niri msg --json focused-window | jq -r '.pid // empty')
+            [[ -z "$pid" ]] && return 1
 
-                        bindkey '^ ' forward-word
-                        bindkey '^[[27;5;9~' autosuggest-accept
+            for node in $(pw-dump | jq -r --arg p "$pid" '.[] | select(.info.props."application.process.id" == $p) | .id'); do
+              wpctl set-mute "$node" toggle && echo "💥 Silenced."
+            done
+          }
 
-          gcp() {
-           if [ -z "$1" ]; then
-             echo "❌ Write a message!"
-             return 1
-           fi
-           git reset --soft origin/main && \
-           git commit -m "$1" && \
-           git push origin main
-           }
         '';
       };
 
