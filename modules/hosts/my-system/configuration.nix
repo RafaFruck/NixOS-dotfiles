@@ -259,6 +259,11 @@
             package = pkgs.adw-gtk3;
           };
 
+          iconTheme = {
+            name = "Papirus-Dark";
+            package = pkgs.papirus-icon-theme;
+          };
+
           font = {
             name = "JetBrainsMono Nerd Font";
             size = 11;
