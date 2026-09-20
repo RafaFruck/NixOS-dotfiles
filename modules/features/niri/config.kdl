@@ -110,13 +110,13 @@ binds {
   Mod+Shift+Ctrl+E { quit; }
   Mod+Shift+S { screenshot; }
 
-  XF86AudioRaiseVolume { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "5%+" "-l" "1.5"; }
-  XF86AudioLowerVolume { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "5%-"; }
-  XF86AudioMute        { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SINK@" "toggle"; }
-  Shift+XF86AudioMute        { spawn "zsh" "-c" "source ~/.zshrc && silence"; }
-  XF86AudioMicMute     { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SOURCE@" "toggle"; }
-  XF86MonBrightnessUp   { spawn "brightnessctl" "set" "5%+"; }
-  XF86MonBrightnessDown { spawn "brightnessctl" "set" "5%-"; }
+  XF86AudioRaiseVolume   { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "5%+" "-l" "1.5"; }
+  XF86AudioLowerVolume   { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "5%-"; }
+  XF86AudioMute          { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SINK@" "toggle"; }
+  Shift+XF86AudioMicMute { spawn "zsh" "-c" "source ~/.zshrc && silence"; }
+  XF86AudioMicMute       { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SOURCE@" "toggle"; }
+  XF86MonBrightnessUp    { spawn "brightnessctl" "set" "5%+"; }
+  XF86MonBrightnessDown  { spawn "brightnessctl" "set" "5%-"; }
 
   Super+Ctrl+Alt+L { spawn "hyprlock";}
   Super+Ctrl+Alt+P { power-off-monitors; }
