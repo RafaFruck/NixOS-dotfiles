@@ -432,8 +432,14 @@
     environment.systemPackages = with pkgs; [
       sddm-astronaut-pkg
       phinger-cursors
-      btop
     ];
+
+    security.wrappers.btop = {
+      owner = "root";
+      group = "root";
+      source = "${pkgs.btop}/bin/btop";
+      capabilities = "cap_sys_admin+ep";
+    };
 
     fonts.fontconfig = {
       enable = true;
