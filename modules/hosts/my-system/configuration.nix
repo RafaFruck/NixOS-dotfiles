@@ -328,7 +328,6 @@
           hyprlock
           spotify-player
           gnome-disk-utility
-          btop
           intel-gpu-tools
           mangohud
           protonup-ng
@@ -433,6 +432,7 @@
     environment.systemPackages = with pkgs; [
       sddm-astronaut-pkg
       phinger-cursors
+      btop
     ];
 
     fonts.fontconfig = {
