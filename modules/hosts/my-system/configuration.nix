@@ -387,31 +387,12 @@
           ];
         };
 
+        programs.pay-respects = {
+          enable = true;
+          options = ["--alias" "fuck"];
+        };
+
         services.playerctld.enable = true;
-
-        home.file.".config/bat/themes/tokyonight_night.tmTheme".source = "${pkgs.fetchFromGitHub {
-          owner = "folke";
-          repo = "tokyonight.nvim";
-          rev = "v3.0.1";
-          hash = "sha256-QKqCsPxUyTur/zOUZdiT1cOMSotmTsnOl/3Sn2/NlUI=";
-        }}/extras/sublime/tokyonight_night.tmTheme";
-
-        home.file.".XCompose".text = ''
-          include "%L"
-
-          <underscore> <0> : "₀"
-          <underscore> <1> : "₁"
-          <underscore> <2> : "₂"
-          <underscore> <3> : "₃"
-          <underscore> <4> : "₄"
-          <underscore> <5> : "₅"
-          <underscore> <6> : "₆"
-          <underscore> <7> : "₇"
-          <underscore> <8> : "₈"
-          <underscore> <9> : "₉"
-          <underscore> <underscore> : "_"
-          <underscore> <space> : "_"
-        '';
       };
     };
 
