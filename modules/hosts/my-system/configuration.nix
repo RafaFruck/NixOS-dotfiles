@@ -356,6 +356,7 @@
           unzip
           (prismlauncher.override {
             jdks = [jdk8 jdk17 jdk21];
+            additionalLibs = [glfw3-minecraft];
           })
         ];
 
