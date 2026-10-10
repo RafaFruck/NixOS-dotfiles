@@ -354,6 +354,7 @@
           quickshell
           jellyfin-desktop
           unzip
+          prismlauncher
         ];
 
         programs.gh = {
