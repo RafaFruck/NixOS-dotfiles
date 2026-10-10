@@ -354,7 +354,9 @@
           quickshell
           jellyfin-desktop
           unzip
-          prismlauncher
+          (prismlauncher.override {
+            jdks = [jdk8 jdk17 jdk21];
+          })
         ];
 
         programs.gh = {
