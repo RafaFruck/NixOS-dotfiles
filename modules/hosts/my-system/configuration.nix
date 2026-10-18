@@ -288,6 +288,10 @@
           };
         };
 
+        programs.librewolf = {
+          enable = true;
+        };
+
         dconf.settings = {
           "org/gnome/desktop/interface" = {
             font-name = "JetBrainsMono Nerd Font 11";
