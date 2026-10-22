@@ -186,6 +186,8 @@
 
     services.power-profiles-daemon.enable = true;
 
+    services.gvfs.enable = true;
+
     programs.steam = {
       enable = true;
       gamescopeSession.enable = true;
@@ -363,7 +365,6 @@
             additionalLibs = [libxkbcommon];
           })
           blender
-          thunar
         ];
 
         programs.gh = {
@@ -403,6 +404,11 @@
         };
 
         services.playerctld.enable = true;
+
+        services.udiskie = {
+          enable = true;
+          tray = "auto";
+        };
       };
     };
 
