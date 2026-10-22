@@ -366,6 +366,7 @@
           })
           blender
           thunar
+          calibre
         ];
 
         programs.gh = {
