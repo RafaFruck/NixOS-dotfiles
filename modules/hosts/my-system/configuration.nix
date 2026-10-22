@@ -363,6 +363,7 @@
             additionalLibs = [libxkbcommon];
           })
           blender
+          thunar
         ];
 
         programs.gh = {
