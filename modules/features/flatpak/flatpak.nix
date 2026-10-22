@@ -14,6 +14,7 @@
       "com.github.tchx84.Flatseal"
       "com.ktechpit.typingmaster"
       "org.openshot.OpenShot"
+      "io.github.ciromattia.kcc"
     ];
   in {
     system.userActivationScripts.flatpakManagement = {
