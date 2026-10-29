@@ -83,7 +83,11 @@
 
     networking.hostName = "nixos";
     networking.networkmanager.enable = true;
-    networking.firewall.allowedTCPPorts = [22];
+
+    networking.firewall = {
+      allowedUDPPorts = [54982 48123 39001 45654 44237];
+      allowedTCPPorts = [22 9090];
+    };
 
     services.tailscale.enable = true;
 

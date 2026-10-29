@@ -12,7 +12,6 @@
       "org.libreoffice.LibreOffice"
       "com.usebottles.bottles"
       "com.github.tchx84.Flatseal"
-      "com.ktechpit.typingmaster"
       "org.openshot.OpenShot"
       "io.github.ciromattia.kcc"
     ];
