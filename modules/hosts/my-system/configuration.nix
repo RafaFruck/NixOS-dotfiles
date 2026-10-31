@@ -351,7 +351,6 @@
           y-cruncher
           exfat
           veracrypt
-          gparted
           parted
           tty-clock
           qalculate-gtk
