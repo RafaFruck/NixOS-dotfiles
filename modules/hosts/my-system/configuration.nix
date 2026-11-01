@@ -371,6 +371,8 @@
           blender
           thunar
           calibre
+          picard
+          chromaprint
         ];
 
         programs.gh = {
