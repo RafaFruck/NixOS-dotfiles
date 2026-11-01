@@ -14,6 +14,7 @@
       "com.github.tchx84.Flatseal"
       "org.openshot.OpenShot"
       "io.github.ciromattia.kcc"
+      "org.musicbrainz.Picard"
     ];
   in {
     system.userActivationScripts.flatpakManagement = {
