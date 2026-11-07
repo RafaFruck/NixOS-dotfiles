@@ -371,6 +371,7 @@
           blender
           thunar
           calibre
+          wl-clipboard
         ];
 
         programs.gh = {
