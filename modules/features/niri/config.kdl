@@ -124,6 +124,7 @@ binds {
   Super+Alt+C     { center-window; }
 
   Mod+N { spawn "qs" "ipc" "call" "notifications" "toggle"; }
+  Mod+Shift+N { spawn "qs" "ipc" "call" "musicvisualizer" "toggle"; }
 }
 window-rule {
   geometry-corner-radius 0
