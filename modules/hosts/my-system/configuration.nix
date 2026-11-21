@@ -372,6 +372,7 @@
           thunar
           calibre
           wl-clipboard
+          chromium
         ];
 
         programs.gh = {
